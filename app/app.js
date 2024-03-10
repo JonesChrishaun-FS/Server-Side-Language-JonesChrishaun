@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.gnpm et("/", (req, res) => {
+app.get("/", (req, res) => {
   console.log("GET");
 });
 
