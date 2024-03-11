@@ -13,17 +13,8 @@ router.get("/:id", (req, res) => {
   });
 });
 router.put("/:id", (req, res) => {
-  const id = parseInt(req.params.id);
-  const pet = pets.find((pet) => pet.id === id);
-  const updatePet = pets.forEach((e, id) => {
-    if (e.id === pet.id) {
-      pets[id] = pet;
-    }
-    console.log(updatePet);
-  });
   res.status(200).json({
     message: "Service is up",
-    id: updatePet,
   });
 });
 router.post("/", (req, res) => {
@@ -42,9 +33,11 @@ router.get("/", (req, res) => {
   });
 });
 router.delete("/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  pets.splice(pets.findIndex((pet) => pet.id === id));
   res.status(200).json({
     message: "Service is up",
-    id: req.params.id,
+    delete: true,
   });
 });
 module.exports = router;
