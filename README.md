@@ -1,7 +1,4 @@
-NodeJS Coding Assignment- Week One
+Test 1
 
--Added array for storage purpose
--Array to Get by Id, Put by Id, and Delete by Id
--App file consist of API and routes
--Routes files consist of HTTP methods (CRUD)
--Server.js to create server to run on port
+-Downloaded jest to run tests
+-Write test to multiply, add, subtract, and divde
