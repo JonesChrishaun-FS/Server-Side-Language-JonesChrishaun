@@ -1,7 +1,9 @@
-NodeJS Coding Assignment- Week One
+# NodeJS MongoDB- Week Two
 
--Added array for storage purpose
--Array to Get by Id, Put by Id, and Delete by Id
--App file consist of API and routes
--Routes files consist of HTTP methods (CRUD)
--Server.js to create server to run on port
+- Controller for both models
+- Seperate route files with error handling
+- Mongoose Schema :
+- Two models relate to each other
+- 3-5 properties on each model
+- Use 4 different data types
+- Validate all parts of the model
