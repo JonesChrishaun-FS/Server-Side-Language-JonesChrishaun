@@ -1,13 +1,21 @@
 const mongoose = require("mongoose");
 
 const petsSchema = new mongoose.Schema({
-  name: {
+  type: {
     type: String,
     required: [true, "Please add type of pet"],
+    trim: true,
   },
   count: {
     type: Number,
     required: true,
+    min: 50,
+    max: 200,
+  },
+  supplies: {
+    type: String,
+    required: [true, "Please add description of reccommended supplies"],
+    maxlength: [1000, "Decription cannot exceed more than 500 characters"],
   },
   description: {
     type: String,
@@ -16,4 +24,4 @@ const petsSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Pets", petsSchema);
+module.exports = mongoose.model("pets", petsSchema);
