@@ -1,44 +1,20 @@
 const router = require("express").Router();
+const {
+  getAllPets,
+  createPet,
+  getPetsById,
+  updatePet,
+  deletePet,
+} = require("../controller/petsController");
 
-router.get("/", (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: `${req.method} - Request made`,
-  });
-});
+router.get("/", getAllPets);
 
-router.post("/", (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: `${req.method} - Request made`,
-  });
-});
+router.post("/", createPet);
 
-router.get("/:id", (req, res) => {
-  const { id } = req.params;
-  res.status(200).json({
-    success: true,
-    id,
-    message: `${req.method} - Request made`,
-  });
-});
+router.get("/:id", getPetsById);
 
-router.put("/:id", (req, res) => {
-  const { id } = req.params;
-  res.status(200).json({
-    success: true,
-    id,
-    message: `${req.method} - Request made`,
-  });
-});
+router.put("/:id", updatePet);
 
-router.delete("/:id", (req, res) => {
-  const { id } = req.params;
-  res.status(200).json({
-    success: true,
-    id,
-    message: `${req.method} - Request made`,
-  });
-});
+router.delete("/:id", deletePet);
 
 module.exports = router;
