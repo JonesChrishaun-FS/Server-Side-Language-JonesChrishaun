@@ -11,8 +11,7 @@ const petSchema = new mongoose.Schema(
     count: {
       type: Number,
       required: true,
-      min: 50,
-      max: 200,
+      max: [200, "Cannot exceed over 200"],
     },
     supplies: {
       type: String,

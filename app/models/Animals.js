@@ -34,9 +34,9 @@ const animalSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Pet",
     },
-    toJSON: { getters: true },
   },
-  { timestamps: true }
+  { timestamps: true },
+  { toJSON: { getters: true } }
 );
 
 module.exports = mongoose.model("Animal", animalSchema);
