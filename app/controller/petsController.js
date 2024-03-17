@@ -25,8 +25,11 @@ const createPet = async (req, res) => {
       message: `${req.method} - Request made`,
     });
   } catch (error) {
-    console.error(error.message);
-    res.status(404).json({ success: false, error: error.message });
+    if (error.name == "ValidationError") {
+      res.status(404).json({ error });
+    } else {
+      res.status(500).json(error.message);
+    }
   }
 };
 
@@ -55,8 +58,11 @@ const updatePet = async (req, res) => {
       message: `${req.method} - Request made`,
     });
   } catch (error) {
-    console.error(error.message);
-    res.status(404).json({ success: false, error: error.message });
+    if (error.name == "ValidationError") {
+      res.status(404).json({ error });
+    } else {
+      res.status(500).json(error.message);
+    }
   }
 };
 
