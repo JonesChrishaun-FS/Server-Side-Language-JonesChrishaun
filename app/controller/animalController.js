@@ -1,8 +1,8 @@
-const Animal = require("../models/Animals");
+const Animals = require("../models/Animals");
 
 const getAllAnimals = async (req, res) => {
   try {
-    const animal = await Animal.find({});
+    const animal = await Animals.find({});
     res.status(200).json({
       data: animal,
       success: true,
@@ -17,13 +17,13 @@ const getAllAnimals = async (req, res) => {
 const createAnimal = async (req, res) => {
   try {
     const { animal } = req.body;
-    const newAnimal = await Pets.create(animal);
-    console.log(newPet);
+    const newAnimal = await Animals.create(animal);
     res.status(200).json({
       success: true,
       data: newAnimal,
       message: `${req.method} - Request made`,
     });
+    console.log(">>>", data);
   } catch (error) {
     if (error.name == "ValidationError") {
       res.status(404).json({ error });
@@ -36,7 +36,7 @@ const createAnimal = async (req, res) => {
 const getAnimalById = async (req, res) => {
   try {
     const { id } = req.params;
-    const animal = await Animal.findById(id);
+    const animal = await Animals.findById(id);
     res.status(200).json({
       success: true,
       data: animal,
@@ -51,7 +51,7 @@ const getAnimalById = async (req, res) => {
 const updateAnimal = async (req, res) => {
   try {
     const { id } = req.params;
-    const animal = await Animal.findByIdAndUpdate(id, req.body, { new: true });
+    const animal = await Animals.findByIdAndUpdate(id, req.body, { new: true });
     res.status(200).json({
       success: true,
       data: animal,
@@ -69,7 +69,7 @@ const updateAnimal = async (req, res) => {
 const deleteAnimal = async (req, res) => {
   try {
     const { id } = req.params;
-    const animal = await Pets.findByIdAndDelete(id);
+    const animal = await Animals.findByIdAndDelete(id);
     res.status(200).json({
       success: true,
       message: `${req.method} - Request made `,

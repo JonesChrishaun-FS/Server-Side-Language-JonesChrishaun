@@ -18,7 +18,6 @@ const createPet = async (req, res) => {
   try {
     const { pet } = req.body;
     const newPet = await Pets.create(pet);
-    console.log(newPet);
     res.status(200).json({
       success: true,
       data: newPet,

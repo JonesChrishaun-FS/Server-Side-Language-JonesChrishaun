@@ -36,7 +36,7 @@ const animalSchema = new mongoose.Schema(
     },
   },
   { timestamps: true },
-  { toJSON: { getters: true } }
+  { toJSON: { getters: true } }.price
 );
 
-module.exports = mongoose.model("Animal", animalSchema);
+module.exports = mongoose.model("Animals", animalSchema);

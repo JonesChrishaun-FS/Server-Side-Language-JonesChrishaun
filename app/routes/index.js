@@ -10,6 +10,6 @@ router.get("/", (req, res) => {
 });
 
 router.use("/pets", petRoutes);
-router.use("/animal", animalRoutes);
+router.use("/animals", animalRoutes);
 
 module.exports = router;

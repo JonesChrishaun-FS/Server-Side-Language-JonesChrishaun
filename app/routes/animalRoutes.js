@@ -7,14 +7,11 @@ const {
   deleteAnimal,
 } = require("../controller/animalController");
 
-router.get("/", getAllAnimals);
+router.get("/", getAllAnimals).post(createAnimal);
 
-router.post("/", createAnimal);
-
-router.get("/:id", getAnimalById);
-
-router.put("/:id", updateAnimal);
-
-router.delete("/:id", deleteAnimal);
+router
+  .get("/:id", getAnimalById)
+  .put("/:id", updateAnimal)
+  .delete("/:id", deleteAnimal);
 
 module.exports = router;
