@@ -1,9 +1,11 @@
 # NodeJS Coding Assignment- Week One
 
-branch dev
+-b dev
 
-Test 1 - branch test1
+Test 1 - b test1
 
 # NodeJs MongoDB - Week Two
 
-branch mongoDB
+-b mongoDB
+
+Test 2 - Integration Testing / -b test2
