@@ -7,7 +7,7 @@ const {
   deleteAnimal,
 } = require("../controller/animalController");
 
-router.get("/", getAllAnimals).post(createAnimal);
+router.route("/").get(getAllAnimals).post(createAnimal);
 
 router
   .get("/:id", getAnimalById)

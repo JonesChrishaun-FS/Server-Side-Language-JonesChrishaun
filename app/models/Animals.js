@@ -16,9 +16,7 @@ const animalSchema = new mongoose.Schema(
       max: [50, "Cannot be more than 50"],
     },
     price: {
-      type: Number,
-      get: (v) => (v / 100).toFixed(2),
-      set: (v) => v * 100,
+      type: mongoose.Types.Decimal128,
     },
     food: {
       type: String,
@@ -36,7 +34,7 @@ const animalSchema = new mongoose.Schema(
     },
   },
   { timestamps: true },
-  { toJSON: { getters: true } }.price
+  { toJSON: { getters: true } }
 );
 
 module.exports = mongoose.model("Animals", animalSchema);

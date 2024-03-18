@@ -17,13 +17,13 @@ const getAllAnimals = async (req, res) => {
 const createAnimal = async (req, res) => {
   try {
     const { animal } = req.body;
+    console.log(animal);
     const newAnimal = await Animals.create(animal);
     res.status(200).json({
       success: true,
       data: newAnimal,
       message: `${req.method} - Request made`,
     });
-    console.log(">>>", data);
   } catch (error) {
     if (error.name == "ValidationError") {
       res.status(404).json({ error });
