@@ -50,10 +50,14 @@ const getPetsById = async (req, res) => {
 const updatePet = async (req, res) => {
   try {
     const { id } = req.params;
-    const pet = await Pets.findByIdAndUpdate(id, req.body, { new: true });
+    const newPets = await Pets.findByIdAndUpdate(id, req.body, {
+      $set: { new: true },
+    });
+    console.log(newPets);
+    console.log(id);
     res.status(200).json({
       success: true,
-      data: pet,
+      data: newPets,
       message: `${req.method} - Request made`,
     });
   } catch (error) {
