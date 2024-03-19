@@ -51,7 +51,9 @@ const getAnimalById = async (req, res) => {
 const updateAnimal = async (req, res) => {
   try {
     const { id } = req.params;
-    const animal = await Animals.findByIdAndUpdate(id, req.body, { new: true });
+    const animal = await Animals.findByIdAndUpdate(id, req.body, {
+      $set: { new: true },
+    });
     res.status(200).json({
       success: true,
       data: animal,
