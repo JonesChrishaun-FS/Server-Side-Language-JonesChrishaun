@@ -1,11 +1,7 @@
-# NodeJS MongoDB- Week Two
+# NodeJS MongoDB Integration Testing- Week Two
 
-- Controller for both models
-- Seperate route files with error handling
+Writing Integration test in Postman
 
-### Mongoose Schema :
+- 3 GOOD test for each of the 5 methods (GET, POST, DEL by ID, PUT by ID, GET by ID)
 
-- Two models relate to each other
-- 3-5 properties on each model
-- Use 4 different data types
-- Validate all parts of the model
+- Added .json file to project repo and push to test2 branch in Github
