@@ -8,4 +8,4 @@ Test 1 - b test1
 
 -b mongoDB
 
-Test 2 - Integration Testing / -b test2
+Test 2 - Integration Testing / -b testPost
