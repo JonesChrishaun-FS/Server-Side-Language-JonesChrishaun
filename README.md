@@ -1,7 +1,9 @@
-# NodeJS MongoDB Integration Testing- Week Two
+# API query data from MongoDB
 
-Writing Integration test in Postman
+- npm i api-query-params package
 
-- 3 GOOD test for each of the 5 methods (GET, POST, DEL by ID, PUT by ID, GET by ID)
+- Use a query string to use at least two query operators on one of your endpoints.
 
-- Added .json file to project repo and push to test2 branch in Github
+- Use select to exclude data from an endpoint with a query string
+
+- Use sort on at least one endpoint to return a sorted get all endpoint
