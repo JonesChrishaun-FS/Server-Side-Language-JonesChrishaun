@@ -30,7 +30,7 @@ const animalSchema = new mongoose.Schema(
     },
     pet: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Pet",
+      ref: "Pets",
     },
   },
   { timestamps: true },

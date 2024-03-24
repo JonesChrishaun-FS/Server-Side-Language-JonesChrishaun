@@ -1,4 +1,5 @@
 const Animals = require("../models/Animals");
+const Pets = require("../models/Pets");
 
 const getAllAnimals = async (req, res) => {
   try {
@@ -18,11 +19,19 @@ const createAnimal = async (req, res) => {
   try {
     const { animal } = req.body;
 
-    const user = await Animals.create(animal.pet);
+    const user = await Pets.findById(animal.pet);
+    animal.pet = user;
+
+    const animalData = new Animals(animal);
+
+    user.animal.push(animalData._id);
+
+    const queries = [animalData.save(), user.save()];
+    await Promise.all(queries);
 
     res.status(200).json({
       success: true,
-      data: newAnimal,
+      data: animalData,
       message: `${req.method} - Request made`,
     });
   } catch (error) {

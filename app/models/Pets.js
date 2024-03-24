@@ -26,7 +26,7 @@ const petSchema = new mongoose.Schema(
     animal: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Animal",
+        ref: "Animals",
       },
     ],
   },

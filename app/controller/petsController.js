@@ -4,14 +4,14 @@ const Pets = require("../models/Pets");
 const getAllPets = async (req, res) => {
   try {
     const { filter, skip, limit, sort, projection } = aqp(req.query);
-    const pets = await Pets.find(filter)
+    const pet = await Pets.find(filter)
       .skip(skip)
       .limit(limit)
       .sort(sort)
       .select(projection);
 
     res.status(200).json({
-      data: pets,
+      data: pet,
       success: true,
       message: `${req.method} - Request made`,
     });
