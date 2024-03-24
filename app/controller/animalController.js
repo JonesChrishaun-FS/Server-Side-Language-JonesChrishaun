@@ -1,9 +1,18 @@
+const aqp = require("api-query-params");
 const Animals = require("../models/Animals");
 const Pets = require("../models/Pets");
 
 const getAllAnimals = async (req, res) => {
+  const { filter, skip, limit, sort, projection, population } = aqp(req.query);
+
   try {
-    const animal = await Animals.find({});
+    const animal = await Animals.find(filter)
+      .skip(skip)
+      .limit(limit)
+      .sort(sort)
+      .select(projection)
+      .populate(population);
+
     res.status(200).json({
       data: animal,
       success: true,
@@ -84,6 +93,7 @@ const deleteAnimal = async (req, res) => {
     const animal = await Animals.findByIdAndDelete(id);
     res.status(200).json({
       success: true,
+      data: animal,
       message: `${req.method} - Request made `,
     });
   } catch (error) {

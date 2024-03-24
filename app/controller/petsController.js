@@ -3,12 +3,16 @@ const Pets = require("../models/Pets");
 
 const getAllPets = async (req, res) => {
   try {
-    const { filter, skip, limit, sort, projection } = aqp(req.query);
+    const { filter, skip, limit, sort, projection, population } = aqp(
+      req.query
+    );
+
     const pet = await Pets.find(filter)
       .skip(skip)
       .limit(limit)
       .sort(sort)
-      .select(projection);
+      .select(projection)
+      .populate(population);
 
     res.status(200).json({
       data: pet,
