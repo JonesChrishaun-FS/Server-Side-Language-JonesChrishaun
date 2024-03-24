@@ -23,10 +23,12 @@ const petSchema = new mongoose.Schema(
       required: [true, "Please add a description"],
       maxlength: [1000, "Description cannot exceed more than 500 characters"],
     },
-    animal: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Animal",
-    },
+    animal: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Animal",
+      },
+    ],
   },
   { timestamps: true }
 );

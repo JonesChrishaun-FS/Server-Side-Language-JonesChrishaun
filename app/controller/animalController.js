@@ -17,8 +17,9 @@ const getAllAnimals = async (req, res) => {
 const createAnimal = async (req, res) => {
   try {
     const { animal } = req.body;
-    console.log(animal);
-    const newAnimal = await Animals.create(animal);
+
+    const user = await Animals.create(animal.pet);
+
     res.status(200).json({
       success: true,
       data: newAnimal,
