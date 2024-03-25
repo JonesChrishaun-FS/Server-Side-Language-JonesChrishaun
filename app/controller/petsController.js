@@ -3,6 +3,12 @@ const Pets = require("../models/Pets");
 
 const getAllPets = async (req, res) => {
   try {
+    let querString = JSON.stringify(req.body);
+
+    querString = JSON.parse(
+      querString.replace(/\b(gt|gte|lt|lte)\b/g, (match) => `$${match}`)
+    );
+
     const { filter, skip, limit, sort, projection, population } = aqp(
       req.query
     );
