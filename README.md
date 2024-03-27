@@ -1,7 +1,13 @@
-# Unit testing API in Postman
+# Second Collection
 
-- A test for your API with the endpoint the returns limited data based on a query string and select.
+- Use select() to exclude info like version
 
-- A test for your API that returns the pagination of the collection. Test the skip and limit of the endpoint.
+- Use populate to display your first collection (model) in your second model
 
-- A test for the endpoint that returns your collection sorted. Test the sort in both directions.
+- In all the (id) functions check to see if the object is in the database first, if so, then display "object" not found, like in the examples. (GET by ID, etc.)
+
+- Put hardcoded messages in a Messages module
+
+- When posting second collection using the id from the first collection, (found in MongoDB)
+
+- Use Postman to view ALL function payloads
