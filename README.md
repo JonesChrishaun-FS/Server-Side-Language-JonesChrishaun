@@ -1,9 +1,7 @@
-# API query data from MongoDB
+# Unit testing API in Postman
 
-- npm i api-query-params package
+- A test for your API with the endpoint the returns limited data based on a query string and select.
 
-- Use a query string to use at least two query operators on one of your endpoints.
+- A test for your API that returns the pagination of the collection. Test the skip and limit of the endpoint.
 
-- Use select to exclude data from an endpoint with a query string
-
-- Use sort on at least one endpoint to return a sorted get all endpoint
+- A test for the endpoint that returns your collection sorted. Test the sort in both directions.
