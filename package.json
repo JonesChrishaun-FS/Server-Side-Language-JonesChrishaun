@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --detectOpenHandles",
+    "test": "jest --no-cache  --detectOpenHandles",
     "dev": "nodemon server.js",
     "start": "node server.js"
   },
